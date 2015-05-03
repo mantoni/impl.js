@@ -15,10 +15,11 @@
   "homepage": "https://github.com/mantoni/impl.js",
   "main": "lib/central.js",
   "scripts": {
-    "watch": "mochify --watch",
+    "watch": "mocha --watch",
     "lint": "jslint --edition=latest --color \"**/*.js\"",
     "pretest": "npm run lint",
-    "test": "echo '# node:' && mocha -R dot && mochify --cover"
+    "test": "echo '# node:' && mocha -R dot && mochify --cover",
+    "wd": "mochify --wd"
   },
   "repository": {
     "type": "git",
