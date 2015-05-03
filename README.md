@@ -9,6 +9,9 @@ Fantastic dependency injection for npm modules.
 - Light weight and fast
 - No dependencies
 
+Impl works fine if it's loaded multiple times, e.g. when linking modules
+locally during development.
+
 ## How does it work?
 
 There are four entities used by impl: "Contracts" define the API that
