@@ -1,6 +1,6 @@
 {
   "name": "impl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fantastic dependency injection for npm modules",
   "keywords": [
     "ioc",
