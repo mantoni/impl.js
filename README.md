@@ -1,5 +1,9 @@
 # Impl
 
+[![Build Status]](https://travis-ci.org/mantoni/impl.js)
+[![SemVer]](http://semver.org)
+[![License]](https://github.com/mantoni/impl.js/blob/master/LICENSE)
+
 Fantastic dependency injection for npm modules.
 
 ## Features
@@ -29,8 +33,9 @@ exports.publish = function (message, callback) {};
 ```
 
 The module exposing the contract can document the API and releases versions
-should follow [semver][]. Any JavaScript object that implements a contract has
-to expose functions with the same name and arity as defined in the contract.
+should follow [SemVer](http://semver.org). Any JavaScript object that
+implements a contract has to expose functions with the same name and arity as
+defined in the contract.
 
 ### Types
 
@@ -119,7 +124,7 @@ application.
 
 ## Compatibility
 
-The test suite runs against there environments:
+The test suite runs against these environments:
 
 - Node 0.10, 0.12
 - PhantomJS 1.9
@@ -131,5 +136,7 @@ The test suite runs against there environments:
 
 MIT
 
+[Build Status]: http://img.shields.io/travis/mantoni/impl.js.svg
+[SemVer]: http://img.shields.io/:semver-%E2%9C%93-brightgreen.svg
+[License]: http://img.shields.io/npm/l/impl.svg
 [Browserify]: http://browserify.org
-[semver]: http://semver.org
