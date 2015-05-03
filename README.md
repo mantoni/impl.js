@@ -21,11 +21,13 @@ A Contract is a plain Node module that exports an API of empty functions. A
 simple contract for a messaging API could look like this:
 
 ```js
+// module: my-messaging-contract
 exports.publish = function (message, callback) {};
 ```
 
-Any JavaScript object that implements a contract has to expose functions with
-the same name and arity as defined in the contract.
+The module exposing the contract can document the API and releases versions
+should follow [semver][]. Any JavaScript object that implements a contract has
+to expose functions with the same name and arity as defined in the contract.
 
 ### Types
 
@@ -34,6 +36,10 @@ types in a specific way. All you have to do is associate the type with the
 contract:
 
 ```js
+// module: my-amqp-messaging
+var impl = require('impl');
+var Messaging = require('my-messaging-contract');
+
 function AMQPMessaging() {}
 AMQPMessaging.prototype.publish = function (message, callback) {
   // RPC logic over AMQP, invokes callback with reply
@@ -53,6 +59,9 @@ An instance can be any JavaScript object. An instance is associated with a type
 like this:
 
 ```js
+var impl = require('impl');
+var AMQPMessaging = require('my-amqp-messaging');
+
 impl.instance(AMQPMessaging, new AMQPMessaging());
 ```
 
@@ -66,6 +75,9 @@ If you don't want a single instance of something, use a factory function that
 gets invoked every time an instance is requested:
 
 ```js
+var impl = require('impl');
+var AMQPMessaging = require('my-amqp-messaging');
+
 impl.factory(AMQPMessaging, function () {
   return new AMQPMessaging();
 });
@@ -78,6 +90,9 @@ Note: Returned instances don't have to be `instanceof Type`.
 Now you can retrieve instances just by providing a contract:
 
 ```js
+var impl = require('impl');
+var Messaging = require('my-messaging-contract');
+
 var messaging = impl.get(Messaging);
 ```
 
@@ -114,3 +129,4 @@ The test suite runs against there environments:
 MIT
 
 [Browserify]: http://browserify.org
+[semver]: http://semver.org
