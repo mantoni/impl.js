@@ -86,6 +86,10 @@ the messaging contract, again by using semantic versioning, e.g. `^1.0.0`. This
 ensures that a contract compatible version is made available by the
 application.
 
+## Install
+
+    $ npm install impl --save
+
 ## API
 
 - `set(Contract, Type)`: Associates a contract with a type that implements the
@@ -95,3 +99,18 @@ application.
 - `get(Contract)`: Returns an instance for a contract and verifies that the
   resolved instance matches the contract.
 
+## Compatibility
+
+The test suite runs against there environments:
+
+- Node 0.10, 0.12
+- PhantomJS 1.9
+- IE 9, 10, 11
+- Chrome *
+- Firefox *
+
+## License
+
+MIT
+
+[Browserify]: http://browserify.org
