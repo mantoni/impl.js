@@ -24,17 +24,18 @@ created by a "factory" function.
 
 ### Contracts
 
-A Contract is a plain Node module that exports an API of empty functions. A
-simple contract for a messaging API could look like this:
+A Contract is a plain Node module that exports some functions. The functions
+body will be ignored and can be empty. A simple contract for a messaging API
+could look like this:
 
 ```js
 // module: my-messaging-contract
 exports.publish = function (message, callback) {};
 ```
 
-The module exposing the contract can document the API and releases versions
-should follow [SemVer](http://semver.org). Any JavaScript object that
-implements a contract has to expose functions with the same name and arity as
+The module exposing the contract can document the API. Release versions should
+follow [semantic versioning](http://semver.org). Any JavaScript object that
+implements a contract must expose functions with the same name and arity as
 defined in the contract.
 
 ### Types
@@ -95,7 +96,7 @@ Note: Returned instances don't have to be `instanceof Type`.
 
 ### Resolving instances by contract
 
-Now you can retrieve instances just by providing a contract:
+Now you can retrieve instances by contract:
 
 ```js
 var impl = require('impl');
@@ -118,9 +119,9 @@ application.
 - `set(Contract, Type)`: Associates a contract with a type that implements the
   contract.
 - `instance(Type, instance)`: Sets an instance for a type.
-- `factory(Type, factory)`: Sets an factory function for a type.
+- `factory(Type, factory)`: Sets a factory function for a type.
 - `get(Contract)`: Returns an instance for a contract and verifies that the
-  resolved instance matches the contract.
+  resolved instance implements the contract.
 
 ## Compatibility
 
