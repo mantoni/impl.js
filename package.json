@@ -13,7 +13,7 @@
   ],
   "author": "Maximilian Antoni <mail@maxantoni.de> (http://maxantoni.de)",
   "homepage": "https://github.com/mantoni/impl.js",
-  "main": "lib/central.js",
+  "main": "lib/impl.js",
   "scripts": {
     "watch": "mocha --watch",
     "lint": "jslint --edition=latest --color \"**/*.js\"",
