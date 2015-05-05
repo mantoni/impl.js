@@ -120,8 +120,9 @@ application.
   contract.
 - `instance(Type, instance)`: Sets an instance for a type.
 - `factory(Type, factory)`: Sets a factory function for a type.
-- `get(Contract)`: Returns an instance for a contract and verifies that the
-  resolved instance implements the contract.
+- `get(ContractOrType)`: Returns an instance for a contract or a type. If a
+  contract is given, verifies that the resolved instance implements the
+  contract.
 
 ## Compatibility
 

@@ -337,4 +337,12 @@ describe('get', function () {
     });
   });
 
+  it("returns an instance for a type without a contract", function () {
+    var instance = {};
+    var Type = func();
+    impl.instance(Type, instance);
+
+    assert.strictEqual(impl.get(Type), instance);
+  });
+
 });
