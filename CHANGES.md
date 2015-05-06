@@ -1,5 +1,9 @@
 # Changes
 
+## 1.2.0
+
+- Add `unset(ContractOrType)` to remove existing associations
+
 ## 1.1.1
 
 - Fix main in package.json
