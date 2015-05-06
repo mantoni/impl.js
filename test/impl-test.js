@@ -346,3 +346,37 @@ describe('get', function () {
   });
 
 });
+
+
+describe("unset", function () {
+
+  it("removes instance", function () {
+    var Type = func();
+    impl.instance(Type, {});
+
+    impl.unset(Type);
+
+    assert.throws(function () {
+      impl.get(Type);
+    }, Error);
+  });
+
+  it("throws if null is given", function () {
+    assert.throws(function () {
+      impl.unset(null);
+    }, /TypeError: Argument must be object/);
+  });
+
+  it("throws if string is given", function () {
+    assert.throws(function () {
+      impl.unset("some-foo");
+    }, /TypeError: Argument must be object/);
+  });
+
+  it("throws if given object does not have a store", function () {
+    assert.throws(function () {
+      impl.unset({});
+    }, /Error: Given object was not associated/);
+  });
+
+});

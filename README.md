@@ -123,6 +123,8 @@ application.
 - `get(ContractOrType)`: Returns an instance for a contract or a type. If a
   contract is given, verifies that the resolved instance implements the
   contract.
+- `unset(ContractOrType)`: Removes any association from the given contract or
+  type.
 
 ## Compatibility
 
