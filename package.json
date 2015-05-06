@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https:github.com/mantoni/impl.js.git"
+    "url": "https://github.com/mantoni/impl.js.git"
   },
   "dependencies": {},
   "devDependencies": {
