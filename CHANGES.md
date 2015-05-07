@@ -1,5 +1,17 @@
 # Changes
 
+## 1.3.0
+
+- Add options to `get` and allow to mark the dependency as `optional`
+
+Optional dependencies will return `null` instead of throwing an exception if no
+associated instance or contract can be found:
+
+```js
+// Do not throw if MyThing is not registered with impl:
+var instance = impl.get(MyThing, { optional : true });
+```
+
 ## 1.2.0
 
 - Add `unset(ContractOrType)` to remove existing associations
