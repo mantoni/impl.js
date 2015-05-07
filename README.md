@@ -18,9 +18,21 @@ locally during development.
 
 ## How does it work?
 
-There are four entities used by impl: "Contracts" define the API that
-"instances" of a specific "type" have to implement. An "instance" may be
-created by a "factory" function.
+The most simple use case is to associate a module with an instance:
+
+```js
+var MyThing = require('my-thing');
+
+impl.instance(MyThing, new MyThing());
+```
+
+A module that need an instance of `my-thing` can retrieve it like this:
+
+```js
+var MyThing = require('my-thing');
+
+var myThing = impl.get(MyThing);
+```
 
 ### Contracts
 
