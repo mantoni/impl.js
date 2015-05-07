@@ -132,9 +132,12 @@ application.
   contract.
 - `instance(Type, instance)`: Sets an instance for a type.
 - `factory(Type, factory)`: Sets a factory function for a type.
-- `get(ContractOrType)`: Returns an instance for a contract or a type. If a
-  contract is given, verifies that the resolved instance implements the
-  contract.
+- `get(ContractOrType[, options])`: Returns an instance for a contract or a
+  type. If a contract is given, verifies that the resolved instance implements
+  the contract. Options must be an object an can have these properties:
+    - `optional`: If set to `true`, no exception will be thrown in case no
+      instance of factory is found for the given contract or type. Instead,
+      `null` will be returned.
 - `unset(ContractOrType)`: Removes any association from the given contract or
   type.
 

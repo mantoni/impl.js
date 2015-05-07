@@ -345,6 +345,21 @@ describe('get', function () {
     assert.strictEqual(impl.get(Type), instance);
   });
 
+  it("does not throw if 'optional' and contract is unknown", function () {
+    var value = impl.get({}, { optional : true });
+
+    assert.strictEqual(value, null);
+  });
+
+  it("does not throw if 'optional' and contract has no instance", function () {
+    var Contract = {};
+    impl.set(Contract, func());
+
+    var value = impl.get(Contract, { optional : true });
+
+    assert.strictEqual(value, null);
+  });
+
 });
 
 
